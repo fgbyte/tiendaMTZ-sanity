@@ -1,41 +1,42 @@
 {
-  "name": "tiendamtz-sanity",
-  "private": true,
-  "sideEffects": false,
-  "type": "module",
-  "scripts": {
-    "build": "remix vite:build",
-    "dev": "remix vite:dev",
-    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "start": "remix-serve ./build/server/index.js",
-    "typecheck": "tsc"
-  },
-  "dependencies": {
-    "@headlessui/react": "^2.1.2",
-    "@remix-run/node": "^2.10.3",
-    "@remix-run/react": "^2.10.3",
-    "@remix-run/serve": "^2.10.3",
-    "@sanity/client": "^6.21.0",
-    "@sanity/image-url": "^1.0.2",
-    "isbot": "^4.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "stripe": "^16.2.0",
-    "zustand": "^4.5.4"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.8.3",
-    "@remix-run/dev": "^2.10.3",
-    "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.4",
-    "typescript": "^5.1.6",
-    "vite": "^5.1.0",
-    "vite-tsconfig-paths": "^4.2.1"
-  },
-  "engines": {
-    "node": ">=20.0.0"
-  }
+	"name": "tiendamtz-sanity",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"scripts": {
+		"build": "remix vite:build",
+		"dev": "remix vite:dev",
+		"lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+		"start": "remix-serve ./build/server/index.js",
+		"typecheck": "tsc"
+	},
+	"dependencies": {
+		"@headlessui/react": "^2.1.2",
+		"@remix-run/node": "^2.10.3",
+		"@remix-run/react": "^2.10.3",
+		"@remix-run/serve": "^2.10.3",
+		"@sanity/client": "^6.21.0",
+		"@sanity/image-url": "^1.0.2",
+		"isbot": "^4.1.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"stripe": "^16.2.0",
+		"zustand": "^4.5.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@remix-run/dev": "^2.10.3",
+		"@types/react": "^18.2.20",
+		"@types/react-dom": "^18.2.7",
+		"autoprefixer": "^10.4.19",
+		"postcss": "^8.4.38",
+		"tailwindcss": "^3.4.4",
+		"typescript": "^5.1.6",
+		"vite": "^5.1.0",
+		"vite-tsconfig-paths": "^4.2.1"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"packageManager": "pnpm@9.9.0+sha512.60c18acd138bff695d339be6ad13f7e936eea6745660d4cc4a776d5247c540d0edee1a563695c183a66eb917ef88f2b4feb1fc25f32a7adcadc7aaf3438e99c1"
 }
