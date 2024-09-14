@@ -17,7 +17,5 @@
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "biomejs.biome"
 	},
-	"cSpell.words": [
-		"hotspot"
-	]
+	"cSpell.words": ["GROQ", "hotspot"]
 }
