@@ -1,7 +1,7 @@
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import { Link, json, useLoaderData } from "@remix-run/react";
 import { client } from "~/lib/sanity";
-import type { Product } from "~/types";
+import type { Product } from "~/types/Product";
 
 type AppProps = {
 	products: Product[];
