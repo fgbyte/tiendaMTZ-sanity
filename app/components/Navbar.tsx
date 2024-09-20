@@ -1,9 +1,11 @@
 import { Link } from "@remix-run/react";
+import { useCartState } from "~/context/useCartStore";
 import AppLogo from "./App-Logo";
 
-type Props = {};
+const Navbar = () => {
+	const toggleCart = useCartState((state) => state.toggleShowCart);
+	const totalItems = useCartState((state) => state.totalItems);
 
-const Navbar = (props: Props) => {
 	return (
 		<>
 			<header className="relative z-10">
@@ -15,13 +17,13 @@ const Navbar = (props: Props) => {
 									<Link className="flex items-center" to="/">
 										<AppLogo className="h-10 w-10 mr-1" />
 										<h1 className="text-2xl font-semibold">
-											Tech <span className="text-indigo-600">Connect</span>
+											Tech <span className="text-indigo-600">Store</span>
 										</h1>
 									</Link>
 								</div>
 								<button
 									type="button"
-									onClick={() => {}}
+									onClick={toggleCart}
 									className="group -m-2 p-2 flex items-center"
 								>
 									<svg
@@ -40,7 +42,7 @@ const Navbar = (props: Props) => {
 										/>
 									</svg>
 									<span className="ml-2 text-sm font-medium text-white bg-red-500 px-3 py-1 rounded-full">
-										0
+										{totalItems}
 									</span>
 								</button>
 							</div>

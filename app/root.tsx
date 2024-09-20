@@ -7,6 +7,7 @@ import {
 } from "@remix-run/react";
 import "./tailwind.css";
 import Navbar from "./components/Navbar";
+import ShoppingCartModal from "./components/ShoppingCartModal";
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
@@ -22,6 +23,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					{children}
 				</main>
+				<ShoppingCartModal />
 				<ScrollRestoration />
 				<Scripts />
 			</body>

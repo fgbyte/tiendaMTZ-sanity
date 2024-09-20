@@ -5,9 +5,11 @@ import { create } from "zustand";
 import type { Actions, State } from "~/types/Cart";
 import type { ProductId } from "~/types/Product";
 
-export const useCartStore = create<State & Actions>((set, get) => ({
+export const useCartState = create<State & Actions>((set, get) => ({
 	//set es usado para actualizar el estado
 	//get es usado para leer el estado
+
+	// Initializes the cart state with an empty array and sets the totalItems and totalPrice properties to 0.
 	cart: [],
 	totalItems: 0,
 	totalPrice: 0,
@@ -62,6 +64,7 @@ export const useCartStore = create<State & Actions>((set, get) => ({
 			cart: state.cart.filter(
 				(item) => item.slug.current !== product.slug.current,
 			), //Retorna un nuevo array que contiene solo los elementos que cumplieron la condición (es decir, cuyo slug es diferente al del producto actual).
+			//TODO: hacer que si existen 2 iguales se remueva solo la quantity de 1
 			totalItems: state.totalItems - 1,
 			totalPrice: state.totalPrice - product.price,
 		}));
