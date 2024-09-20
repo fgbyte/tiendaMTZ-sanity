@@ -24,5 +24,14 @@ export type ProductId = {
 			_ref: string;
 			_type: string;
 		};
-	}[]; //este array[] al final es el que permite usar la prop .map en el elemento asignado con este tipo
+	}[]; //este array[] al final es el que permite usar la prop image.map en el elemento asignado con este tipo
+};
+
+export type ProductImage = {
+	_key: string;
+	_type: string;
+	asset: {
+		_ref: string;
+		_type: string;
+	}; //sin el [] al final
 };
