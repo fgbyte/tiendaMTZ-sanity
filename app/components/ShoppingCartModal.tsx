@@ -18,6 +18,7 @@ const ShoppingCartModal = () => {
 	const cartState = useCartState((state) => state.showCart);
 	const toggleShowCart = useCartState((state) => state.toggleShowCart);
 	const removeItem = useCartState((state) => state.removeFromCart);
+	const deleteItem = useCartState((state) => state.deleteFromCart);
 	const total = useCartState((state) => state.totalPrice);
 
 	return (
@@ -129,7 +130,7 @@ const ShoppingCartModal = () => {
 																			<div className="flex">
 																				<button
 																					type="button"
-																					onClick={() => removeItem(product)}
+																					onClick={() => deleteItem(product)}
 																					className="font-medium text-indigo-600 hover:text-indigo-500"
 																				>
 																					Remove

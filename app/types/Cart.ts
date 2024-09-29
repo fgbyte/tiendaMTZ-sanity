@@ -11,4 +11,5 @@ export type Actions = {
 	addToCart: (Item: ProductId) => void;
 	removeFromCart: (Item: ProductId) => void;
 	toggleShowCart: () => void;
+	deleteFromCart: (Item: ProductId) => void;
 };

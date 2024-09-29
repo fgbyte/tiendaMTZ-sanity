@@ -29,7 +29,7 @@ const IndexPage = () => {
 	const { products } = useLoaderData<typeof loader>() as AppProps; //! casting `products` to `AppProps` define the type safe of products in the component
 	return (
 		<>
-			<section className="flex justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row mt-12">
+			<section className="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row mt-12">
 				<div className="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12">
 					<p className="mb-4 font-semibold text-indigo-600 md:mb-6 md:text-lg xl:text-xl">
 						Welcome to my shop!
@@ -52,7 +52,7 @@ const IndexPage = () => {
 					</div>
 				</div>
 
-				<div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12">
+				<div className="h-48 hidden overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto lg:block xl:w-5/12">
 					<img
 						src="https://cdn.pixabay.com/photo/2020/01/26/20/14/computer-4795762_1280.jpg"
 						alt="Product"
@@ -63,7 +63,7 @@ const IndexPage = () => {
 
 			<section id="products">
 				<div className="py-24 sm:py-32 lg:pt-32">
-					<div className="mt-6 grid grid-col-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
+					<div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
 						{products.map((product) => (
 							<Link
 								className="group relative"

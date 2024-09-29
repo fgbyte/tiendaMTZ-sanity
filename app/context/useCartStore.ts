@@ -60,13 +60,32 @@ export const useCartState = create<State & Actions>((set, get) => ({
 
 	//Setea un state con el producto eliminado del carrito. Si el producto no está en el carrito, no hace nada.
 	removeFromCart: (product: ProductId) => {
-		set((state) => ({
-			cart: state.cart.filter(
-				(item) => item.slug.current !== product.slug.current,
-			), //Retorna un nuevo array que contiene solo los elementos que cumplieron la condición (es decir, cuyo slug es diferente al del producto actual).
-			//TODO: hacer que si existen 2 iguales se remueva solo la quantity de 1
-			totalItems: state.totalItems - 1,
-			totalPrice: state.totalPrice - product.price,
-		}));
+		console.log("product", product);
+	},
+
+	deleteFromCart: (product: ProductId) => {
+		const cart = get().cart;
+		const cartItem = cart.find(
+			(item) => item.slug.current === product.slug.current,
+		);
+		if (cartItem && cartItem.quantity > 1) {
+			set((state) => ({
+				cart: state.cart.map((item) =>
+					item.slug.current === product.slug.current
+						? { ...item, quantity: item.quantity - 1 }
+						: item,
+				),
+				totalItems: state.totalItems - 1,
+				totalPrice: state.totalPrice - product.price,
+			}));
+		} else {
+			set((state) => ({
+				cart: state.cart.filter(
+					(item) => item.slug.current !== product.slug.current,
+				), //Retorna un nuevo array que contiene solo los elementos que cumplieron la condición (es decir, cuyo slug es diferente al del producto actual).
+				totalItems: state.totalItems - 1,
+				totalPrice: state.totalPrice - product.price,
+			}));
+		}
 	},
 }));
