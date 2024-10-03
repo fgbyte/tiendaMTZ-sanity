@@ -5,6 +5,7 @@ import {
 	Transition,
 	TransitionChild,
 } from "@headlessui/react";
+import type { ActionFunctionArgs } from "@remix-run/node";
 import { Form, Link } from "@remix-run/react";
 import { Fragment } from "react/jsx-runtime";
 import { useCartState } from "~/context/useCartStore";
@@ -17,7 +18,6 @@ const ShoppingCartModal = () => {
 
 	const cartState = useCartState((state) => state.showCart);
 	const toggleShowCart = useCartState((state) => state.toggleShowCart);
-	const removeItem = useCartState((state) => state.removeFromCart);
 	const deleteItem = useCartState((state) => state.deleteFromCart);
 	const total = useCartState((state) => state.totalPrice);
 
